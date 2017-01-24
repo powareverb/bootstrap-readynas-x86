@@ -1,0 +1,16 @@
+<VirtualHost *:9991>
+
+DocumentRoot /data/VirtualBox/phpvirtualbox
+<Directory "/data/VirtualBox/phpvirtualbox">
+        AllowOverride None
+        Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+        Order Deny,Allow
+        Allow from All
+        <IfModule mod_ssl.c>
+        SSLOptions +StdEnvVars
+        </IfModule>
+</Directory>
+
+</VirtualHost>
+
+Listen 9991
